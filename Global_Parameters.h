@@ -37,3 +37,13 @@ void clearBuffer(char buffer[])
 	while(i < MAXLENGTH)
 		buffer[i++] = ' ';
 }
+
+void displayLine(char buffer[])
+{
+	int index = 0;
+
+	while(buffer[index] != '\0')
+		printf("%c", buffer[index++]);
+
+	printf("\n");
+}
