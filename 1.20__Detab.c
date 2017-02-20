@@ -18,6 +18,9 @@ int main()
 			else
 				spaces = charactersread % TABSTOP;	
 
+			if (spaces < (TABSTOP / 2))
+				spaces = TABSTOP - spaces;
+
 			while(i < spaces)
 			{
 				printf(" ");
