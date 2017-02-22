@@ -6,6 +6,8 @@
 // VARIABLES
 
 char c;
+char program[500];
+
 
 // FUNCTIONS
 
