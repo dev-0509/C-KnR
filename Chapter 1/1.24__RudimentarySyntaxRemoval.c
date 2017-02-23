@@ -13,49 +13,101 @@ int readProgram()
 
 int checkDoubleQuotes(int index)
 {
+	int flag = 0;
+
 	while(program[index] != '\n')
 	{
-		if(program[index] == '"')
+		if(program[index] == 34)
+		{
+			flag = 1;
 			break;
+		}	
 		else
 			++index;
 	}
 
 	if(program[index] == '\n')
-		return 0;
+	{
+		if(flag == 0)
+			return 1;
+		else
+			return 0;	
+	}
 	else
 		return 1;
 }
 
 int checkSingleQuotes(int index)
 {
+	int flag = 0;
+
 	while(program[index] != '\n')
 	{
-		if(program[index] == '\'')
+		if(program[index] == 39)
+		{
+			flag = 1;
 			break;
+		}
 		else
 			++index;
 	}
 
 	if(program[index] == '\n')
-		return 0;
+	{
+		if(flag == 0)
+			return 1;
+		else
+			return 0;	
+	}
 	else
 		return 1;
 }
 
-/* 
-int checkComments()
-{	
+int checkComments(int programindex)
+{
+	int i = 0;
+
+	while(i < programindex)
+	{
+		if(program[i] == '/')
+		{
+			if(program[i + 1] == '/')
+				return 1;
+
+			else if(program[i + 1] == '*')
+			{
+				i = i + 2;
+
+				while(1)
+				{
+					if(program[i] == '*' && program[i + 1] == '/')
+						return 1;
+
+					++i;
+
+					if(i == programindex)
+						return 0;
+				}
+			}
+
+			else
+				++i;
+		}
+		else
+			++i;
+	}	
+
+	return 1;
 }
-*/
+
 
 int main()
 {
-	int i = 0, index, parenthesis, braces, brackets, doublequotes, singlequotes, doublequotestatus, singlequotestatus;
+	int i = 0, flag = 0, index, parenthesis, braces, brackets, doublequotes, singlequotes, doublequotestatus, singlequotestatus, commentstatus;
 
 	parenthesis = brackets = braces = doublequotes = singlequotes = 0;
 
-	printf("\n# Enter the C-Program : \n\n");
+	printf("\n# Enter the C-Program %d: \n\n", singlequotestatus);
 
 	index = readProgram();
 
@@ -78,11 +130,19 @@ int main()
 		else
 		{
 			if(program[i] == '"')
+			{
+				flag = 1;
 				doublequotestatus = checkDoubleQuotes(i);
+			}
+
 			else if(program[i] == '\'')
+			{
+				flag = 1;
 				singlequotestatus = checkSingleQuotes(i);
-			// else
-				// commentstatus = checkComments();
+			}
+
+			else
+				commentstatus = checkComments(index);
 		}
 
 		++i;
@@ -92,8 +152,20 @@ int main()
 		printf("\n\n\tRudimentary Syntax detected ! Erroneous Code");
 	else
 	{
-		if( (singlequotestatus) && (doublequotestatus) )
-			printf("\n\n\tNo Rudimentary Syntax :)");
+		if(flag == 1)
+		{
+			if( (singlequotestatus) && (doublequotestatus) )
+				printf("\n\n\tNo Rudimentary Syntax :)");
+			else
+				printf("\n\n\tRudimentary Syntax detected ! Erroneous Code");	
+		}
+		else
+		{
+			if(commentstatus)
+				printf("\n\n\tNo Rudimentary Syntax :)");
+			else
+				printf("\n\n\tRudimentary Syntax detected ! Erroneous Code");		
+		}
 	}
 
 	return 0;
