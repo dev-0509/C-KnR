@@ -7,24 +7,42 @@ char charactersread[MAXLENGTH];
 int positionsread[MAXLENGTH];
 int squeezeposition[MAXLENGTH];
 
+int readMainString(FILE *fptr)
+{
+	int index = 0;
+	char ch;
+
+	while((ch = fgetc(fptr)) != '\n')
+		mainstring[index++] = ch;
+
+	return index;
+}
+
+int readProcessorString(FILE *fptr)
+{
+	int index = 0;
+	char ch;
+
+	while((ch = fgetc(fptr)) != EOF)
+		string[index++] = ch;
+
+	return index;
+}
+
 void readStrings()
 {
 	FILE *p;
-	int index = 0;
+	int index;
 
 	p = fopen("C:\\Users\\devsa\\Desktop\\Study !\\Programs\\C-KnR\\Chapter 2\\2.4_InputCase.txt","r");
 
 	while( ! (feof(p)) )
 	{
-		while((c = fgetc(p)) != '\n')
-			mainstring[index++] = c;
+		index = readMainString(p);		
 
 		mainstring[index] = '\0';
 
-		index = 0;
-
-		while((c = fgetc(p)) != EOF)
-			string[index++] = c;
+		index = readProcessorString(p);
 
 		string[index] = '\0';
 	}
