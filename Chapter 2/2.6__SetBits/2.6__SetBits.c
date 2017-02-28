@@ -2,30 +2,43 @@
 #include "stdlib.h"
 #include "Global_Parameters.h"
 
-void setBits()
+/*
+   Replaces 'n' Bits from a particular position in a number by the 'n' rightmost Bits 
+   of another number
+*/
+
+int setBits()
 {
-	int requiredbits, replacerbits, final, truncate, result;
+	bit_disabler = ( -1 << (position + 1) );
 
-	requiredbits = number >> (position + 1 - no_of_bits);
+	replacer = ( 2 << position );
 
-	replacerbits = replacewith & ~( ~0 << no_of_bits );
+	bits_number = number & ~( ~0 << (position + 1 - no_of_bits) );
 
-	replacerbits = replacerbits << (position + 1 - no_of_bits);
+	bits_replacewith = replacewith & ~( ~0 << no_of_bits );
 
-	result =  number & ~( ~0 << (position - no_of_bits + 1) );
+	bits_replacewith = bits_replacewith << ( (position + 1 - no_of_bits) );
 
-	result = ~( ~0 << (position + 1) ) & result;
+	number = number & bit_disabler;
 
-	result = result | replacerbits;
+	replacer = replacer | bits_number;
 
-	printf("%d", result);
+	replacer = replacer | bits_replacewith;
+
+	replacer = replacer ^ ( 1 << (position + 1) );
+
+	number = number | replacer;
+
+	return number;
 }
 
 int main()
 {
 	getInput();
 
-	setBits();
+	number = setBits();
+
+	printf("\n%d\n", number);
 
 	return 0;
 }
