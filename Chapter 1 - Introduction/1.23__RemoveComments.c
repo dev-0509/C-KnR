@@ -1,7 +1,8 @@
 #include "stdio.h"
+#include "stdlib.h"
 #include "Global_Parameters.h"
 
-int readProgram()
+int readProgram_fromcmd()
 {
 	int index = 0;
 
@@ -9,6 +10,58 @@ int readProgram()
 		program[index++] = c;
 
 	return index;
+}
+
+int readFile(const char *fname, char buffer[])
+{
+	int index = 0;
+	FILE *fptr;
+
+	fptr = fopen(fname, "r");
+
+	while((c = fgetc(fptr)) != EOF)
+		buffer[index++] = c;
+
+	buffer[index] = '\0';
+
+	// printf("%s", buffer);
+
+	return index;
+}
+
+void loadProgramToUncomment()
+{
+	// Loads the source program to the buffer
+}
+
+void loadExpectedUncommentedProgram()
+{
+	
+}
+
+void compareActualWithExpected()
+{
+
+}
+
+void generateUncommentedProgram()
+{
+
+}
+
+void getNextLine()
+{
+
+}
+
+int checkifMultiLineCommentStarted()
+{
+
+}
+
+int checkifMultiLineCommentEnded()
+{
+
 }
 
 void displayProgram(int index)
@@ -176,9 +229,11 @@ int main()
 {
 	int i = 0, pos, index, startindex, endindex, closeblock = 0, newline, j, iscomment = 0, endofcomment;
 
-	printf("\n# Enter the C-Program : \n\n");
+	// printf("\n# Enter the C-Program : \n\n");
 
 	index = readProgram();
+
+	exit(0);
 
 	while(i < index)
 	{

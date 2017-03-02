@@ -1,7 +1,7 @@
 // MACROS
 
 #define EOI '%'
-#define MAXLENGTH 100
+#define MAXLENGTH 300
 
 // VARIABLES
 
