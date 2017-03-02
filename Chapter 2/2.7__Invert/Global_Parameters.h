@@ -4,7 +4,7 @@ int number;
 int position;
 int no_of_bits; 
 
-int replacer, bits_number, bits_inverted, bit_disabler;
+int shift;
 
 // FUNCTIONS
 

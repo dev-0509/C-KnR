@@ -5,7 +5,7 @@ int position;
 int no_of_bits; 
 int replacewith;
 
-int a, replacer, bits_number, bits_replacewith, bit_disabler;
+int replacer, bits_number, bits_replacewith, bit_disabler;
 
 // FUNCTIONS
 
