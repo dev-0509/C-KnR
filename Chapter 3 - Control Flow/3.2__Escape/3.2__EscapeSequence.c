@@ -2,6 +2,8 @@
 #include "string.h"
 #include "Global.h"
 
+// Print Newlines and Tabs in a string, explicitely as Escaped Characters
+
 void sendCharacterToOutputBuffer(char character)
 {
 	static int index = 0;
