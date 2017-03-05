@@ -8,24 +8,20 @@ void sendCharacterToOutputBuffer(char character)
 
 	switch( character )
 	{
-		case '\n' : strcat( gOutputBuffer , "\\n" );
-					index += 2;
-								
-						break;
+		case NEWLINE : strcat( gOutputBuffer , "\\n" );
+					   		index += 2;
+					             
+					   break;
 
-		case '\t' : strcat( gOutputBuffer , "\\t" );
-					index += 2;
+		case TAB 	 : strcat( gOutputBuffer , "\\t" );
+					   		index += 2;
 
-						break;
+				  	   break;
 
-		default   : gOutputBuffer[index++] = character;
-						break;
+		default   	 : gOutputBuffer[index++] = character;
+							      
+					   break;
 	}
-}
-
-void printOutputBuffer()
-{
-	printf("\n%s\n", gOutputBuffer);
 }
 
 char checkCharacter(char character)
@@ -40,21 +36,30 @@ char checkCharacter(char character)
 	}
 }
 
+char getNextCharacter()
+{
+	static int index = 0;
+
+	if( gInputBuffer[index] == '\0')
+		return END_OF_STRING;
+
+	else
+		return gInputBuffer[index++];
+}
+
 void checkEscapeCharacter()
 {
-	int index = 0, character;
+	char newcharacter;
 
-	while( gInputBuffer[index] != '\0' )
+	while( newcharacter = getNextCharacter() )
 	{
-		character = checkCharacter( gInputBuffer[index] );
+		newcharacter = checkCharacter( newcharacter );
 
-		sendCharacterToOutputBuffer( character );
-
-		++index;
+		sendCharacterToOutputBuffer( newcharacter );
 	}
 }
 
-void readString()
+void populateStringInBuffer()
 {
 	FILE *p;
 	char c, index = 0;
@@ -68,9 +73,14 @@ void readString()
 	gInputBuffer[index] = '\0';
 }
 
+void printOutputBuffer()
+{
+	printf("\n%s\n", gOutputBuffer);
+}
+
 int main()
 {
-	readString();
+	populateStringInBuffer();
 
 	checkEscapeCharacter();
 

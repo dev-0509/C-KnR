@@ -1,11 +1,12 @@
 // MACROS
 
-#define MAXSIZE  100
-#define EOI      '%'
-#define READ	 "r"
+#define MAXSIZE  		100
+#define EOI      		'%'
+#define READ	 		"r"
+#define END_OF_STRING	0
 
-#define NEWLINE  '\n'
-#define TAB		 '\t'
+#define NEWLINE  		'\n'
+#define TAB		 		'\t'
 
 // VARIABLES
 
