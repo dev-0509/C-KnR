@@ -2,17 +2,9 @@
 #include "stdlib.h"
 #include "Global_Parameters.h"
 
-int readProgram_fromcmd()
-{
-	int index = 0;
+char buffer[MAXLENGTH];
 
-	while((c = getchar()) != EOI)
-		program[index++] = c;
-
-	return index;
-}
-
-int readFile(const char *fname, char buffer[])
+int readFile(const char *fname)
 {
 	int index = 0;
 	FILE *fptr;
@@ -27,41 +19,6 @@ int readFile(const char *fname, char buffer[])
 	// printf("%s", buffer);
 
 	return index;
-}
-
-void loadProgramToUncomment()
-{
-	// Loads the source program to the buffer
-}
-
-void loadExpectedUncommentedProgram()
-{
-	
-}
-
-void compareActualWithExpected()
-{
-
-}
-
-void generateUncommentedProgram()
-{
-
-}
-
-void getNextLine()
-{
-
-}
-
-int checkifMultiLineCommentStarted()
-{
-
-}
-
-int checkifMultiLineCommentEnded()
-{
-
 }
 
 void displayProgram(int index)
@@ -231,9 +188,10 @@ int main()
 
 	// printf("\n# Enter the C-Program : \n\n");
 
-	index = readProgram();
+	char fname[] = "C:\\Users\\devsa\\Desktop\\Study !\\Projects\\ITS_UICC_OS_its mine!\\ITS_UICC_OS_3G\\ITS_UICC_OS\\dev\\src\\framework\\fw_Authenticate.c";
+	index = readFile(fname);
 
-	exit(0);
+	//exit(0);
 
 	while(i < index)
 	{
