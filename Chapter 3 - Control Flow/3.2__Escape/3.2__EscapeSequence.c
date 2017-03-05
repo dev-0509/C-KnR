@@ -2,20 +2,6 @@
 #include "string.h"
 #include "Global.h"
 
-char switchCharacter(char character)
-{
-	char escape_character;
-
-	switch( character )
-	{
-		case '\n' : return NEWLINE;
-
-		case '\t' : return TAB;
-
-		default	  : return character;
-	}
-}
-
 void sendCharacterToOutputBuffer(char character)
 {
 	static int index = 0;
@@ -37,23 +23,35 @@ void sendCharacterToOutputBuffer(char character)
 	}
 }
 
+void printOutputBuffer()
+{
+	printf("\n%s\n", gOutputBuffer);
+}
+
+char checkCharacter(char character)
+{
+	switch( character )
+	{
+		case '\n' : return NEWLINE;
+
+		case '\t' : return TAB;
+
+		default	  : return character;
+	}
+}
+
 void checkEscapeCharacter()
 {
 	int index = 0, character;
 
 	while( gInputBuffer[index] != '\0' )
 	{
-		character = switchCharacter( gInputBuffer[index] );
+		character = checkCharacter( gInputBuffer[index] );
 
 		sendCharacterToOutputBuffer( character );
 
 		++index;
 	}
-}
-
-void printOutputBuffer()
-{
-	printf("\n%s\n", gOutputBuffer);
 }
 
 void readString()
