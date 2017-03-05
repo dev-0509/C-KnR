@@ -15,12 +15,12 @@ void sendCharacterToOutputBuffer(char character)
 					             
 					   break;
 
-		case TAB 	: strcat( gOutputBuffer , "\\t" );
+		case TAB : strcat( gOutputBuffer , "\\t" );
 					   		index += 2;
 
 				  	   break;
 
-		default   	: gOutputBuffer[index++] = character;
+		default  : gOutputBuffer[index++] = character;
 							      
 					   break;
 	}
