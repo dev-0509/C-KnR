@@ -3,6 +3,8 @@
 #include "string.h"
 #include "Global.h"
 
+// Converts the input integer to the specified Base supplied
+
 void setSign(int sign, char * string)
 {
 	if( sign == '-' )
