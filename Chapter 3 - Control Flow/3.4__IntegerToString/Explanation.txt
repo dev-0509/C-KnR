@@ -1,0 +1,22 @@
+Compiler : GCC
+
+~ In GCC, the wordsize is 32 bits, thus, unsigned range of integer is ( 2 ^ 32 ) - 1 = 
+  4294967296
+~ Signed range : -2147483648 to 2147483647
+
+Therefore, largest negative number on GCC machine = -2147483648 
+
+|--> Now according to the program, if n < 0, it makes 'n' positive by the statement, n = -n;
+
+	But ideally, -(-2147483648) = 2147483648, and 2147483648 does not exist as a postive number on GCC, the largest positive number is 2147483647. Therefore, n = -2147483648
+	cannot be made positive as it's positive equivalent does not exists.
+
+|--> So, when the loop, while( (n /= 10) < 0 ); is tested on n = -2147483648, result is:-
+
+	(-214748364) < 0 => and the condition is false, thereby terminating the loop, and the number isn't converted into it's corresponding string equivalent.
+
+* This is the reason why the function, itoa() cannot handle the largest negative number. 
+  The improvised version of itoa is mentioned in the file, "3.4__Improvised-itoa().c", in
+  the same directory.
+
+Happy Coding ! :) 
