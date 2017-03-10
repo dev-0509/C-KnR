@@ -5,7 +5,7 @@ If number = 50, number of characters it would take when it is converted into str
 Now, MINIMUM_FIELD_WIDTH is a parameter which indicates minimum number of characters which 
      should be present in a string.
 
-Thus, if MINIMUM_FIELD_WIDTH = 8, string contain minimum of 8 characters.
+Thus, if MINIMUM_FIELD_WIDTH = 8, string contains minimum of 8 characters.
 
 Thereby, to fulfill this criteria, padding is applied which ensures spaces to be fixed in if
 the string does not meet the specified number of characters.
