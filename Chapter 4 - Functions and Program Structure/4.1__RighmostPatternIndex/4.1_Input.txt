@@ -1,0 +1,2 @@
+hey ! this is the main string with main pattern
+main
