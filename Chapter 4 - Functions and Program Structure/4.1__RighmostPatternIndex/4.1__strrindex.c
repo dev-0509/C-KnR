@@ -18,9 +18,9 @@ int strrindex(char * string, char * pattern)
 	{
 		for( patt_index = strlen( pattern ) - 1 ; 
 
-					string[str_index] == pattern[patt_index] ; 
+				string[str_index] == pattern[patt_index] ; 
 
-														--str_index , --patt_index 	);
+								--str_index , --patt_index 	);
 
 		if( patt_index < 0 )
 			return ( str_index + 1 );
