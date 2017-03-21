@@ -3,6 +3,17 @@
 #include "ctype.h"
 #include "Global.h"
 
+/*
+	Polish Calculator : evaluates expressions by converting them into POSTFIX notations and 
+						uses a Stack for arithmetic linking.
+
+			Pushes each operand on to the stack, upon finding an operator, pops
+			out the proper number of operands required for the operator, performs
+			evaluation and stores the result on the Top of the Stack :)
+
+PS: --Beta Version-- Deals with single-digit Operands only :p
+*/
+
 int main(int argc, char const * argv[])
 {
 	int status;
