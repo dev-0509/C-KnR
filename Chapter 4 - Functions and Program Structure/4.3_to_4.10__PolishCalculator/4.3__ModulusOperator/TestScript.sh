@@ -34,7 +34,7 @@ function executeTests()
 	testnumber=1
 
 	# Compile and Create Executable
-	gcc 4.3__ModulusOperatorFunctioning.c -o 4.3_Executable.exe
+	gcc 4.3__ModulusOperatorFunctioning.c -o 4.3_Executable
 
   #-------------------------- TEST CASE 1 ----------------------------------#
 	string="1 2 - 9 2 % x"
