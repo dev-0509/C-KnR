@@ -24,7 +24,7 @@ function printTestCaseResult()
 
 function callExecutable()
 {
-	output_string=$( ./4.9	_Executable $string )
+	output_string=$( ./4.10_Executable $string )
 
 	echo $output_string
 }
@@ -34,7 +34,7 @@ function executeTests()
 	testnumber=1
 
 	# Compile and Create Executable
-	gcc 4.9__EOFHandling.c -o 4.9_Executable
+	gcc 4.10__GetLineforReadingInput.c -o 4.10_Executable
 
   #-------------------------- TEST CASE 1 ----------------------------------#
 	string="1 2 - 9 2 % x"
