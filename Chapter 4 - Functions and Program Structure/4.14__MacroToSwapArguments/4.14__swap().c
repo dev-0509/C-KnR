@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 #define swap( type , arg1 , arg2 ) { \
-									type temp; \
-									temp = arg1; \
-									arg1 = arg2; \
-									arg2 = temp; \
-								}
+					type temp; \
+					temp = arg1; \
+					arg1 = arg2; \
+					arg2 = temp; \
+		}
 
 int main( void ) {
 
