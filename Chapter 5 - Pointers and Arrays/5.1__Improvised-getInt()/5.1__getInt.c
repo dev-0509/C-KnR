@@ -13,7 +13,7 @@
 
 	Eg: In String - +abc, the character after '+' is 'a', which is not a number
 
-		But, the earlier version of getInt() read 'a' but never pushed it back but it is
+		But, the earlier version of getInt() read 'a' but never pushed it back yet it is
 		essential to push it back because 'a' is of no use in number computation.
 
 *\--------------------------------------------------------------------------------------*/
