@@ -30,7 +30,7 @@ int main(int argc, char const * argv[])
 char polishCalculator()
 {
 	int result, divisor, operand;
-	char nextchar, string[ MAXSIZE ];
+	char nextchar, string[ MAXSIZE ], choice;
 
 	while( ( nextchar = getOp( string ) ) != '\0' )
 	{
