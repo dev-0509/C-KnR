@@ -40,7 +40,7 @@ int main(int argc, char const * argv[]) {
 
 }
 
-int isWildCharacterPresent(char character) {
+int isWildCharPresent(char character) {
 
 	if( !isdigit( character ) && character != '\0' 
 
@@ -82,7 +82,7 @@ int getInt(char string[], int * number) {
 
 	while( isspace( nextchar = get_ch( string ) ) ) ;
 
-	if( isWildCharacterPresent( nextchar ) ) {
+	if( isWildCharPresent( nextchar ) ) {
 
 		unget_ch( nextchar );
 
