@@ -29,7 +29,7 @@ float extractPostDecimalNumber(char string[], double * decimal_places) {
 
 	for( number = 0.0 , nextchar = get_ch( string ) ; isdigit( nextchar ) ; 
 
-								nextchar = get_ch( string ) ) {
+							nextchar = get_ch( string ) ) {
 
 		number = ( number * 10.0 ) + ( nextchar - '0' );
 
@@ -47,7 +47,7 @@ float extractPreDecimalNumber(char string[], char nextchar) {
 
 	for( number = 0.0 ; isdigit( nextchar ) ; 
 
-						nextchar = get_ch( string ) )
+				nextchar = get_ch( string ) )
 
 		number = ( number * 10.0 ) + ( nextchar - '0' );
 
