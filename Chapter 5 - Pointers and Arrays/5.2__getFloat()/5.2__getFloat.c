@@ -3,6 +3,25 @@
 #include "ctype.h"
 #include "Global.h"
 
+/*
+
+=> 	Program to convert a given string of decimal numbers into it's corresponding single
+	precision format, i.e., Floating Point Number
+
+*/
+
+void displayResult(char status, double number) {
+
+	if( status == NOT_A_NUMBER )
+
+		printf("Invalid!");
+
+	else
+
+		printf("%f", number);
+
+}
+
 float extractPostDecimalNumber(char string[], double * decimal_places) {
 
 	float number;
@@ -10,7 +29,7 @@ float extractPostDecimalNumber(char string[], double * decimal_places) {
 
 	for( number = 0.0 , nextchar = get_ch( string ) ; isdigit( nextchar ) ; 
 
-										nextchar = get_ch( string ) ) {
+								nextchar = get_ch( string ) ) {
 
 		number = ( number * 10.0 ) + ( nextchar - '0' );
 
@@ -28,7 +47,7 @@ float extractPreDecimalNumber(char string[], char nextchar) {
 
 	for( number = 0.0 ; isdigit( nextchar ) ; 
 
-										nextchar = get_ch( string ) )
+						nextchar = get_ch( string ) )
 
 		number = ( number * 10.0 ) + ( nextchar - '0' );
 
@@ -52,17 +71,17 @@ void convertStringToFloat(char string[], char nextchar, double **target_number) 
 
 }
 
-int pushCharBackIfNotANumber(char character) {
+int pushNextcharBackIfNotANumber(char character) {
 
 	if( ! isdigit( character ) ) {
 
 		unget_ch( character );
 
-		return TRUE;
+		return IS_CHARACTER;
 
 	}
 
-	return FALSE;
+	return IS_NUMBER;
 
 }
 
@@ -82,7 +101,7 @@ int isWildCharPresent(char character) {
 
 float getFloat(char string[], double * number) {
 
-	int sign;
+	int sign = 1;
 	char nextchar;
 
 	if( isWildCharPresent( nextchar = get_ch( string ) ) ) {
@@ -101,13 +120,15 @@ float getFloat(char string[], double * number) {
 
 	}
 
-	if( pushCharBackIfNotANumber( nextchar ) )
+	if( pushNextcharBackIfNotANumber( nextchar ) ) 
 
 		return NOT_A_NUMBER;
 
 	convertStringToFloat( string , nextchar , &number );
 
 	*number *= sign;
+
+	return SUCCESS;
 
 }
 
@@ -120,18 +141,19 @@ void getStringFromCmd(char const * argv[], char * string) {
 int main(int argc, char const * argv[]) {
 
 	double target_number;
-	char string[ MAXLENGTH ];
+	char string[ MAXLENGTH ], status;
 	
 	getStringFromCmd( argv , string );
 
-	getFloat( string , &target_number );
+	status = getFloat( string , &target_number );
 
-	printf("%f\n", target_number);
+	displayResult( status , target_number );
 	
 	return 0;
 
 }
 
+// ------ Global Variable only accessible by get_ch() and unget_ch() ------//
 int stringindex;
 
 char get_ch(char string[]) {
