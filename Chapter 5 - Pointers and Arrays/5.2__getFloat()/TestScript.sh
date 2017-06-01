@@ -1,36 +1,40 @@
 # Shell Script for Executing Test Cases
 
-function startScript()
-{
+function startScript() {
+
 	executeTests 
 
 	read
+
 }
 
-function checkIfEqual()
-{
+function checkIfEqual() {
+
 	if [ $1 == $2 ]
 	then 
 		echo "Pass"
 	else
 		echo "Fail"
 	fi
+
 }
 
-function printTestCaseResult()
-{
+function printTestCaseResult() {
+
 	echo "Test $1 : $2"
+
 }
 
-function callExecutable()
-{
+function callExecutable() {
+
 	output_string=$( ./5.2_Executable $string )
 
 	echo $output_string
+
 }
 
-function executeTests()
-{
+function executeTests() {
+
 	testnumber=1
 
 	# Compile and Create Executable
@@ -111,6 +115,7 @@ function executeTests()
 
 	printTestCaseResult $testnumber $result
   #-------------------------------------------------------------------------#
+  
 }
 
 startScript
