@@ -2,6 +2,16 @@
 #include "string.h"
 #include "Global.h"
 
+/*
+
+=>	Program concatenates two strings and the first string is the new updated / concatenated
+	string.
+
+	Implements the concept of Pointer Arithmetic as pointers are used for string 
+	manipulations performed, instead of arrays and array indexing.
+
+*/
+
 void displayResult(int status, char * string) {
 
 	if( status )
