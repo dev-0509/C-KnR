@@ -10,15 +10,15 @@
 	Eg: Suppose,
 				
 	CASE #1 | String 1: " hellohi "
-		String 2: " hi "
+		  String 2: " hi "
 
-		Now, string 2 is a substring of string 1 when we trace string 1 backwards, i.e,
-		in reverse direction.
+		  Now, string 2 is a substring of string 1 when we trace string 1 backwards, i.e,
+		  in reverse direction.
 
 	CASE #2 | String 1: " dev "
-		String 2: " saini "
+		  String 2: " saini "
 
-		Here, string 2 is not a substring of string 1 anywhere in string 1.
+		  Here, string 2 is not a substring of string 1 anywhere in string 1.
 
 Happy Coding! :)
 
