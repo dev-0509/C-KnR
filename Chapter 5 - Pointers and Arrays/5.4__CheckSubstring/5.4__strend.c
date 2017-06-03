@@ -2,6 +2,28 @@
 #include "string.h"
 #include "Global.h"
 
+/*
+
+=> 	Program to verify if a particular string is a substring of another string, while searching
+	the latter string, backwards.
+
+	Eg: Suppose,
+				
+	CASE #1 |	String 1: " hellohi "
+				String 2: " hi "
+
+				Now, string 2 is a substring of string 1 when we trace string 1 backwards, i.e,
+				in reverse direction.
+
+	CASE #2 |	String 1: " dev "
+				String 2: " saini "
+
+				Here, string 2 is not a substring of string 1 anywhere in string 1.
+
+Happy Coding! :)
+
+*/
+
 void displayResult(int status) {
 
 	if( status )
