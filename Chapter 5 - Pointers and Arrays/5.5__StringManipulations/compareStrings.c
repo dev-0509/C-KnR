@@ -27,13 +27,9 @@ int compareEachCharacter(char * comparable_string, char * comparator_string, int
 
 int checkLengthOfComparatorString(char * comparable_string, int no_of_chars) {
 
-	if( strlen( comparable_string ) > no_of_chars )
-
-		return GREATER;
-
 	if( strlen( comparable_string ) < no_of_chars )
 
-		return SMALLER;
+		return GREATER;
 
 	return EQUAL_LENGTH;
 

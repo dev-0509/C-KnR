@@ -2,7 +2,6 @@
 
 #define GREATER				1
 #define NOT_GREATER			0
-#define SMALLER				-1
 #define EQUAL_LENGTH		0
 #define POSSIBLE			1
 #define OVERFLOW			0

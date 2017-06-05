@@ -14,11 +14,11 @@ void displayResult(int status, char * string, int choice) {
 
 		case 2:	if( status == EQUAL_STRINGS )
 
-					printf("\n\nBoth Strings are Equal!\n");
+					printf("\n\nBoth Strings are Equal!\n\n");
 
 				else
 
-					printf("\n\nOutput: %d | String Comparison not possible!\n\n", status);
+					printf("\n\nString Comparison not possible!\n\n", status);
 
 				break;
 
@@ -55,7 +55,7 @@ void fetchInput(char * main_string, char * target_string, int * no_of_chars) {
 
 }
 
-void stringHandler(int choice) {
+int stringHandler(char * output_string, int choice) {
 
 	char main_string[ MAXLENGTH ], target_string[ MAXLENGTH ];
 	int no_of_chars, status;
@@ -66,21 +66,19 @@ void stringHandler(int choice) {
 
 		case 1:	status = copyStrings( main_string , target_string , no_of_chars );
 
-				displayResult( status , main_string , choice );
+			strcpy( output_string , main_string );
 
-				break;
+			return status;
 
 		case 2:	status = compareStrings( main_string , target_string , no_of_chars );
 
-				displayResult( status , NULL , choice );
-
-				break;
+			return status;
 
 		case 3:	status = concatStrings( main_string , target_string , no_of_chars );
 
-				displayResult( status , main_string , choice );
+			strcpy( output_string , main_string );
 
-				break;
+			return status;
 
 		default: printf("\nInvalid Input!");
 
@@ -107,13 +105,16 @@ int displayMenu() {
 
 int main(int argc, char const *argv[]) {
 	
-	int choice;
+	char output_string[ MAXLENGTH ];
+	int choice, status;
 
 	system( "clear" );
 
 	choice = displayMenu();
 
-	stringHandler( choice );
+	status = stringHandler( output_string , choice );
+
+	displayResult( status , output_string , choice );
 
 	return 0;
 
