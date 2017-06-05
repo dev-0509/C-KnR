@@ -10,27 +10,27 @@ void displayResult(int status, char * string, int choice) {
 
 		case 1:	printf("\n\nMain String after Copy Manipulation: %s\n\n", string);
 				
-				break;
+			break;
 
 		case 2:	if( status == EQUAL_STRINGS )
 
-					printf("\n\nBoth Strings are Equal!\n\n");
+				printf("\n\nBoth Strings are Equal!\n\n");
 
-				else
+			else
 
-					printf("\n\nString Comparison not possible!\n\n", status);
+				printf("\n\nString Comparison not possible!\n\n", status);
 
-				break;
+			break;
 
 		case 3:	if( status == SUCCESS )
 
-					printf("\n\nConcatenated String: %s\n\n", string);
+				printf("\n\nConcatenated String: %s\n\n", string);
 
-				else
+			else
 
-					printf("\n\nString Concatenation not possible!\n\n");
+				printf("\n\nString Concatenation not possible!\n\n");
 
-				break;
+			break;
 
 	}
 
