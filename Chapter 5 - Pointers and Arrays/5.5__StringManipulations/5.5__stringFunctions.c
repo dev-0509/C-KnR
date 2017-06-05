@@ -4,6 +4,23 @@
 #include "Global.h"
 #include "StringHandler.h"
 
+/*
+
+=>	Program to handle various String Manipulations using Pointers, such as:- 
+
+		~ Copy String
+		~ Compare Strings
+		~ Concatenate String
+
+	Feature: The code below performs manipulations over 'N' characters of the 
+	         target string, with the 'N' characters of the main strings.
+
+	         The 'N' characters are the leftmost characters of the string.
+
+Happy Coding! :)
+
+*/
+
 void displayResult(int status, char * string, int choice) {
 
 	switch( choice ) {
