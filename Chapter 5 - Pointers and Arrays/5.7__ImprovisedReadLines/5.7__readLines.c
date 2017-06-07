@@ -2,6 +2,18 @@
 #include "string.h"
 #include "Global.h"
 
+/*
+
+=>	Improvised readLines method, reads a particular line of input either from the user or 
+	reads from a predefined file.
+
+	Runs efficiently as it does not makes the use of 'alloc' method to check the available
+	memory in the system and also, eliminates the use of an extra pointer, as used in the
+	explanation of readLines from the book.
+
+Happy Coding! :)
+
+*/
 int getLine(char * line) {
 
 	int index = 0;
