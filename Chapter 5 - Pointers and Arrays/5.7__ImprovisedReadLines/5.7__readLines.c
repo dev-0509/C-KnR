@@ -14,12 +14,13 @@
 Happy Coding! :)
 
 */
+
 int getLine(char * line) {
 
 	int index = 0;
 	char nextchar;
 
-	while( ( nextchar = getchar() ) != EOI && ( nextchar != NEWLINE ) )
+	while( ( index < MAXLENGTH ) && NEW_CHARACTER_EXISTS( nextchar ) )
 
 		line[index++] = nextchar;
 
