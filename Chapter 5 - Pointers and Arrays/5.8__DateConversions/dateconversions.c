@@ -72,7 +72,7 @@ void identifyMonthAndDate(int year, int yearday, int * month, int * date) {
 
 	for( month_number = 1 ; yearday > daytab[ year ][ month_number ] ; 
 
-									++month_number )
+								++month_number )
 
 		yearday -= daytab[ year ][ month_number ];
 
