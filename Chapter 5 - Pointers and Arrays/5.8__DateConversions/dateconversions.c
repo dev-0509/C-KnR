@@ -50,6 +50,9 @@ int fetchDate(int * date, int * month, int * year, int * yearday, int choice) {
 
 	system( "clear" );
 
+	printf("\nEnter Year: ");
+	scanf( "%d" , year );
+
 	if( choice == 1 ) {
 
 		printf("\nEnter Date: ");
@@ -58,15 +61,9 @@ int fetchDate(int * date, int * month, int * year, int * yearday, int choice) {
 		printf("\nEnter Month: ");
 		scanf( "%s" , month_name );
 
-		printf("\nEnter Year: ");
-		scanf( "%d" , year );
-
 		*month = fetchMonthNumber( month_name );
 
 	} else if( choice == 2 ) {
-
-		printf("\nEnter Year: ");
-		scanf( "%d" , year );
 
 		printf("\nEnter Day in the Year: ");
 		scanf( "%d" , yearday );
@@ -105,7 +102,7 @@ int identifyMonthAndDate(int year, int yearday, int * month, int * date) {
 
 	for( month_number = 1 ; yearday > daytab[ leap_year ][ month_number ] ; 
 
-											++month_number )
+									++month_number )
 
 		yearday -= daytab[ leap_year ][ month_number ];
 
