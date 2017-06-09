@@ -12,9 +12,11 @@
 //-----------------------------------------//
 
 
-// ----------------- FUNCTIONS HEADERS ----------------------//
+// ---------------- FUNCTIONS HEADERS ---------------------//
 
 int dateConvertor( int );
+
+int fetchDate(int * , int * , int * , int * , int );
 
 int identifyDayOfYear( int , int , int );
 
@@ -22,8 +24,10 @@ int identifyMonthAndDate( int , int , int * , int * );
 
 int fetchDate( int * , int * , int * , int * , int );
 
+int isDateValid( int , int , int , int );
+
 int fetchMonthNumber( char * );
 
 char * fetchMonthName( int );
 
-//-----------------------------------------------------------//
+//---------------------------------------------------------//

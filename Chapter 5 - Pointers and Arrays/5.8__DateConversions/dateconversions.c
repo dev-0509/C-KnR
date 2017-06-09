@@ -1,4 +1,5 @@
 #include "stdio.h"
+#include "stdlib.h"
 #include "string.h"
 #include "dateconversions.h"
 
@@ -43,6 +44,45 @@ int dateConvertor(int choice) {
 
 }
 
+int fetchDate(int * date, int * month, int * year, int * yearday, int choice) {
+
+	char month_name[ 20 ];
+
+	system( "clear" );
+
+	if( choice == 1 ) {
+
+		printf("\nEnter Date: ");
+		scanf( "%d" , date );
+
+		printf("\nEnter Month: ");
+		scanf( "%s" , month_name );
+
+		printf("\nEnter Year: ");
+		scanf( "%d" , year );
+
+		*month = fetchMonthNumber( month_name );
+
+	} else if( choice == 2 ) {
+
+		printf("\nEnter Year: ");
+		scanf( "%d" , year );
+
+		printf("\nEnter Day in the Year: ");
+		scanf( "%d" , yearday );
+
+	}
+
+	if( isDateValid( *date , *month , *yearday , choice ) )
+
+		return VALID_DATE;
+
+	else 
+
+		return INVALID_DATE;
+
+}
+
 int identifyDayOfYear(int day, int month, int year) {
 
 	int month_number, leap_year;
@@ -65,7 +105,7 @@ int identifyMonthAndDate(int year, int yearday, int * month, int * date) {
 
 	for( month_number = 1 ; yearday > daytab[ leap_year ][ month_number ] ; 
 
-														++month_number )
+											++month_number )
 
 		yearday -= daytab[ leap_year ][ month_number ];
 

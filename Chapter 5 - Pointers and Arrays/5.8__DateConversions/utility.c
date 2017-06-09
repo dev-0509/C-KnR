@@ -5,6 +5,30 @@
 #include "string.h"
 #include "dateconversions.h"
 
+int isDateValid(int day, int month, int yearday, int choice) {
+
+	if( choice == 1 ) {
+
+		if( day < 1 || day > 31 )
+
+			return INVALID_DATE;
+
+		if( month < JANUARY || month > DECEMBER )
+
+			return INVALID_DATE;
+
+	} else if( choice == 2 ) {
+
+		if( yearday < 1 || yearday > 366 )
+
+			return INVALID_DATE;
+
+	}
+
+	return VALID_DATE;
+
+}
+
 char *month_array[] = { "january" , "february" , "march" , "april" , "may" ,
 
 					"june" , "july" , "august" , "september" , "october" , 
