@@ -10,45 +10,27 @@
 
 	Eg: For input, Date: 1 | Month: march
 
-					Program identifies that 1st March is the 61st day of a Leap Year and
-					60th day of a non-leap year.
+			Program identifies that 1st March is the 61st day of a Leap Year and
+			60th day of a non-leap year.
 
 		For input, Year: 2013 | Day of the Year: 60
 
-					Program identifies that the 60th day in the year 2013 is 1st March
+			Program identifies that the 60th day in the year 2013 is 1st March
 
 
 	Improvisation:	The code earlier used the concept of indexing the two-dimensional 
-					array, this version uses pointer arithmetic to make the code much
-					optimised and efficient.
+			array, this version uses pointer arithmetic to make the code much
+			optimised and efficient.
 
-					Eg: daytab[ 0 ][ 2 ] = 28 ( February )
+			Eg: daytab[ 0 ][ 2 ] = 28 ( February )
 
-							|| is equivalent to ||
+					|| is equivalent to ||
 
-						* ( * ( daytab + 0 ) + 2 ) = 28 ( February )
+				* ( * ( daytab + 0 ) + 2 ) = 28 ( February )
 
 Happy Coding!:)
 
 */
-
-void displayResult(int result) {
-
-	if( result == INVALID_DATE ) {
-
-		printf("\nPlease enter a valid date!\n\n");
-
-		return;
-
-	}
-
-	else if( result == SUCCESS )
-
-		return;
-
-	printf("\nDay of Year: %d\n\n", result);
-
-}
 
 int printMenu() {
 

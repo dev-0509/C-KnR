@@ -50,42 +50,6 @@ int dateConvertor(int choice) {
 
 }
 
-int fetchDate(int * date, int * month, int * year, int * yearday, int choice) {
-
-	char month_name[ 20 ];
-
-	system( "clear" );
-
-	printf("\nEnter Year: ");
-	scanf( "%d" , year );
-
-	if( choice == 1 ) {
-
-		printf("\nEnter Date: ");
-		scanf( "%d" , date );
-
-		printf("\nEnter Month: ");
-		scanf( "%s" , month_name );
-
-		*month = fetchMonthNumber( month_name );
-
-	} else if( choice == 2 ) {
-
-		printf("\nEnter Day in the Year: ");
-		scanf( "%d" , yearday );
-
-	}
-
-	if( isDateValid( *date , *month , *yearday , choice ) )
-
-		return VALID_DATE;
-
-	else 
-
-		return INVALID_DATE;
-
-}
-
 int identifyDayOfYear(int day, int month, int year) {
 
 	int month_number;
