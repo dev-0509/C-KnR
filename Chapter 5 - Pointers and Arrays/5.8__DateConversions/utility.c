@@ -33,17 +33,17 @@ int checkForLeapYear(int * year) {
 
 	*year = ( *year % 4 == 0 ) && 
 
-			( *year % 100 != 0 ) || 
+		( *year % 100 != 0 ) || 
 
-			( *year % 400 == 0 );	
+		( *year % 400 == 0 );	
 
 }
 
 char * month_array[] = { "january" , "february" , "march" , "april" , "may" ,
 
-					"june" , "july" , "august" , "september" , "october" , 
+			"june" , "july" , "august" , "september" , "october" , 
 
-					"november" , "december" };
+			"november" , "december" };
 
 int fetchMonthNumber(char * month_name) {
 
