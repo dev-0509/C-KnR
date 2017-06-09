@@ -39,11 +39,9 @@ int checkForLeapYear(int * year) {
 
 }
 
-char * month_array[] = { "january" , "february" , "march" , "april" , "may" ,
+char * month_array[] = { "january" , "february" , "march" , "april" , "may" , "june" , 
 
-			"june" , "july" , "august" , "september" , "october" , 
-
-			"november" , "december" };
+			"july" , "august" , "september" , "october" , "november" , "december" };
 
 int fetchMonthNumber(char * month_name) {
 
