@@ -2,12 +2,12 @@
 /* ---------------- MACROS ----------------*/
 
 #define INVALID_DATE		0
-#define VALID_DATE			1
+#define VALID_DATE		1
 #define INVALID_MONTH_NAME	0
-#define SUCCESS				'%'
+#define SUCCESS			'%'
 
-#define JANUARY				1
-#define DECEMBER			12
+#define JANUARY			1
+#define DECEMBER		12
 
 /*-----------------------------------------*/
 
