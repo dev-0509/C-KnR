@@ -29,7 +29,17 @@ int isDateValid(int day, int month, int yearday, int choice) {
 
 }
 
-char *month_array[] = { "january" , "february" , "march" , "april" , "may" ,
+int checkForLeapYear(int * year) {
+
+	*year = ( *year % 4 == 0 ) && 
+
+			( *year % 100 != 0 ) || 
+
+			( *year % 400 == 0 );	
+
+}
+
+char * month_array[] = { "january" , "february" , "march" , "april" , "may" ,
 
 					"june" , "july" , "august" , "september" , "october" , 
 

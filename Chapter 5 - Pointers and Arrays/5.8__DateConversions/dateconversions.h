@@ -20,11 +20,11 @@ int fetchDate(int * , int * , int * , int * , int );
 
 int identifyDayOfYear( int , int , int );
 
-int identifyMonthAndDate( int , int , int * , int * );
-
-int fetchDate( int * , int * , int * , int * , int );
+void identifyMonthAndDate( int , int , int * , int * );
 
 int isDateValid( int , int , int , int );
+
+int checkForLeapYear( int * );
 
 int fetchMonthNumber( char * );
 

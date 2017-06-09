@@ -16,7 +16,11 @@ int dateConvertor(int choice) {
 	int status, month, date, year, yearday;
 	char month_name[ 20 ];
 
+	int copy_year;
+
 	status = fetchDate( &date , &month , &year , &yearday , choice );
+
+	copy_year = year;
 
 	if( status == INVALID_DATE )
 
@@ -28,11 +32,13 @@ int dateConvertor(int choice) {
 
 			return date;
 
-		case 2:	year = identifyMonthAndDate( year , yearday , &month , &date );
+		case 2:	identifyMonthAndDate( year , yearday , &month , &date );
 
 			strcpy( month_name , ( fetchMonthName( month ) ) );
 
-			printf("\nMonth: %s\nDate: %d\n\n", month_name, date);
+			printf("\nHere's your Date: ");
+
+			printf("%s %d, %d\n\n", month_name, date, copy_year);
 
 			break;
 
@@ -82,29 +88,29 @@ int fetchDate(int * date, int * month, int * year, int * yearday, int choice) {
 
 int identifyDayOfYear(int day, int month, int year) {
 
-	int month_number, leap_year;
+	int month_number;
 
-	leap_year = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+	checkForLeapYear( &year );
 
 	for( month_number = 1 ; month_number < month ; ++month_number )
 
-		day += daytab[ leap_year ][ month_number ];
+		day += daytab[ year ][ month_number ];
 
 	return day;	
 
 }
 
-int identifyMonthAndDate(int year, int yearday, int * month, int * date) {
+void identifyMonthAndDate(int year, int yearday, int * month, int * date) {
 
-	int month_number, leap_year;
+	int month_number;
 
-	leap_year = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+	checkForLeapYear( &year );
 
-	for( month_number = 1 ; yearday > daytab[ leap_year ][ month_number ] ; 
+	for( month_number = 1 ; yearday > daytab[ year ][ month_number ] ; 
 
-										++month_number )
+									++month_number )
 
-		yearday -= daytab[ leap_year ][ month_number ];
+		yearday -= daytab[ year ][ month_number ];
 
 	*month = month_number;
 
