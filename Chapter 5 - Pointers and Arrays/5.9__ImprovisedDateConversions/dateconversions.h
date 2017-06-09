@@ -19,12 +19,14 @@ int fetchDate(int * , int * , int * , int * , int );
 
 void displayResult( int );
 
+
 // Date Conversions
 int dateConvertor( int );
 
 int identifyDayOfYear( int , int , int );
 
 void identifyMonthAndDate( int , int , int * , int * );
+
 
 // Utility
 int isDateValid( int , int , int , int );
