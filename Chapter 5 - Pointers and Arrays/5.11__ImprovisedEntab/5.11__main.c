@@ -3,7 +3,7 @@
 
 /*
 	Please browse the 'entab_explanation' text file for a gist of this program!
-												*/
+											*/
 
 int main(int argc, char const *argv[]) {
 
