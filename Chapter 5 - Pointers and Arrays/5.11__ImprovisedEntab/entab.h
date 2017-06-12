@@ -5,6 +5,7 @@
 #define TAB  		'\t'
 #define READ 		"r"
 #define SPACE		' '
+#define END_OF_STRING	'\0'
 
 #define TABSTOP_REACHED( count , tabstop )	( count % tabstop ) == 0
 

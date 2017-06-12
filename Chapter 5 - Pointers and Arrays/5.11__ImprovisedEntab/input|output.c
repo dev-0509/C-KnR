@@ -29,7 +29,7 @@ void readInputFromFile(char * string) {
 
 		printf("\nInvalid File");
 
-	*string = '\0';
+	*string = END_OF_STRING;
 
 }
 

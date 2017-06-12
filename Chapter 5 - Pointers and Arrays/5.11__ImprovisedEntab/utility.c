@@ -18,7 +18,7 @@ void sendCharToOutputString(char * output_string, char character) {
 
 		index += 2;
 
-		output_string[ index ] = '\0';
+		output_string[ index ] = END_OF_STRING;
 
 		return;
 
@@ -26,6 +26,6 @@ void sendCharToOutputString(char * output_string, char character) {
 
 	output_string[ index++ ] = character;
 
-	output_string[ index ] = '\0';
+	output_string[ index ] = END_OF_STRING;
 
 }

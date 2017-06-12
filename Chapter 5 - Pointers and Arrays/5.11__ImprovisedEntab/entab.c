@@ -6,7 +6,7 @@ void entab(char * string, char * output_string, int tabstop_width) {
 	int charcount = 0, spacecount = 0;
 	char nextchar = 'a';
 
-	while( nextchar != '\0' ) {
+	while( nextchar != END_OF_STRING ) {
 
 		nextchar = getNextChar( string++ );
 
