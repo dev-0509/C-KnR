@@ -1,0 +1,30 @@
+#include "stdio.h"
+#include "entab.h"
+
+/*
+	Please browse the 'entab_explanation' text file for a gist of this program!
+															*/
+
+int main(int argc, char const *argv[]) {
+
+	char string[ MAXLENGTH ], output_string[ MAXLENGTH ];
+
+	int tabstop_width;
+
+	readInputFromFile( string );
+
+	if( argc > 1 )
+
+		fetchTabstopWidth( argv , &tabstop_width );
+
+	else
+
+		tabstop_width = TABSTOP;
+
+	entab( string , output_string , tabstop_width );
+
+	displayOutputString( output_string );
+
+	return 0;
+
+}
