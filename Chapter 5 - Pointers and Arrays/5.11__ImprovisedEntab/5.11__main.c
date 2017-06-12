@@ -3,7 +3,7 @@
 
 /*
 	Please browse the 'entab_explanation' text file for a gist of this program!
-															*/
+												*/
 
 int main(int argc, char const *argv[]) {
 
@@ -19,7 +19,7 @@ int main(int argc, char const *argv[]) {
 
 	else
 
-		tabstop_width = TABSTOP;
+		tabstop_width = TABSTOP;	/* Set TAB width with default width if no cmd arg. is encountered */
 
 	entab( string , output_string , tabstop_width );
 
