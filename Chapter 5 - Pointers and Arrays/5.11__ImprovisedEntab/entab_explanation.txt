@@ -1,5 +1,5 @@
 /------------------------------------------ ENTAB -----------------------------------------\
-										|^^^^^^^^^^^|
+						|^^^^^^^^^^^|
 
 =>	The Entab program, which envelopes the logic used in several editors, the logic of 
 	TAB WIDTHS and TAB STOPS.
