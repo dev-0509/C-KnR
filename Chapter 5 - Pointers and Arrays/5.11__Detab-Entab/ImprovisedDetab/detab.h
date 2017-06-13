@@ -5,6 +5,8 @@
 #define TAB  		'\t'
 #define READ 		"r"
 #define SPACE		' '
+#define FOUND 		1
+#define NOT_FOUND	0
 #define END_OF_STRING	'\0'
 
 #define TABSTOP_REACHED( count , tabstop )	( count % tabstop ) == 0
@@ -18,6 +20,8 @@
 void fetchTabstopWidth( char const *[] , int * );
 
 void readInputFromFile( char * );
+
+int placeTabIfFound( char ** , char , FILE * );
 
 void displayOutputString( char * );
 

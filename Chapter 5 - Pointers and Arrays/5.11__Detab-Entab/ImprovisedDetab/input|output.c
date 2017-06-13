@@ -4,54 +4,67 @@
 
 //---------------------------------------------------------- INPUT ---------------------------------------------------------//
 
-char filename[] = "detab_input.txt";
-
 void fetchTabstopWidth(char const * argv[], int * tabstop_width) {
 
 	*tabstop_width = atoi( argv[ 1 ] );
 
 }
 
+char filename[] = "detab_input.txt";
+
 void readInputFromFile(char * string) {
 
 	FILE *fptr;
-	char nextchar;
+
+	char nextchar, status;
 
 	fptr = fopen( filename , READ );
 
-	if( fptr ) {
+	while( ( nextchar = fgetc( fptr ) ) != EOF ) {
 
-		while( ( nextchar = fgetc( fptr ) ) != EOF ) {
+		status = placeTabIfFound( &string , nextchar , fptr );
 
-			if( nextchar == '\\' ) {
+		if( status == FOUND )
 
-				nextchar = fgetc( fptr );
+			continue;
 
-				if( nextchar == 't' )
-
-					*string++ = '\t';
-
-				else {
-
-					*string++ = '\\';
-
-					*string++ = nextchar;
-
-				}
-
-				continue;
-
-			}
+		else
 
 			*string++ = nextchar;
 
-		}
-
-	} else
-
-		printf("\nInvalid File");
+	}
 
 	*string = END_OF_STRING;
+
+}
+
+int placeTabIfFound(char ** string, char nextchar, FILE * fptr) {
+
+	if( nextchar == '\\' ) {
+
+		nextchar = fgetc( fptr );
+
+		if( nextchar == 't' ) {
+
+			*( *string )++ = '\t';
+
+			return FOUND;
+
+		}
+
+		else {
+
+			*( *string )++ = '\\';
+
+			*( *string )++ = nextchar;
+
+			return NOT_FOUND;
+
+		}
+
+	}
+
+	return NOT_FOUND;
 
 }
 
