@@ -27,7 +27,7 @@ void entab( char * , char * , int , int );
 
 void performEntab( char , char * , int , int * );
 
-void placeTabIfTabstopReached( char * , int , int ** , int * );
+void placeTabToSpaces( char * , int , int ** , int * );
 
 void placeSpacesBeforeTabstop( char * , int * );
 

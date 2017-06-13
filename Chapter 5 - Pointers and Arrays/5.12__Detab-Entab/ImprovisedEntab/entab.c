@@ -34,7 +34,7 @@ void performEntab(char nextchar, char * output_string, int tabstop_width, int * 
 
 		++spacecount;
 
-		placeTabIfTabstopReached( output_string , tabstop_width , &charcount , &spacecount );
+		placeTabToSpaces( output_string , tabstop_width , &charcount , &spacecount );
 
 	} else {
 
@@ -46,7 +46,7 @@ void performEntab(char nextchar, char * output_string, int tabstop_width, int * 
 
 }
 
-void placeTabIfTabstopReached(char * output_string, int tabstop_width, int ** charcount, int * spacecount) {
+void placeTabToSpaces(char * output_string, int tabstop_width, int ** charcount, int * spacecount) {
 
 	if( TABSTOP_REACHED( **charcount , tabstop_width ) ) {
 
