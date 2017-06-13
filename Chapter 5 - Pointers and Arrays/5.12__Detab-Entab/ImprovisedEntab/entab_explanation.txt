@@ -1,0 +1,26 @@
+/----------------------------------------------------------- ENTAB ----------------------------------------------------------\
+							 |^^^^^^^^^^^|
+
+=>	The Entab program, which envelopes the logic used in several editors, the logic of 
+	TAB WIDTHS and TAB STOPS.
+
+	A TabStop is a particular column in an editor to which the cursor jumps to directly,
+	whenever the TAB key is pressed.
+
+	The code in this particular directory guesses the number of TABs that might had been pressed by the user, by
+	performing simple arithmetic over the number of spaces entered in the line of input.
+
+	Eg:	If the user input is - "hello   hi  " and the TABSTOP width is '6',
+
+		Then, the input line becomes - "hello\t  hi"
+
+			After five characters in "hello", the sixth is a space and is also the TABSTOP
+			where the cursor would jump upon pressing the TAB key.
+
+			Thus, that one space signifies that a TAB was pressed.
+
+		This is the process adopted in the Entab program.
+
+Happy Coding!:)
+
+/----------------------------------------------------------------------------------------------------------------------------\
