@@ -3,7 +3,7 @@
 
 void detab(char * string, char * output_string, int tabstop_width) {
 
-	int charcount = 0, spacecount = 0;
+	int charcount = 0;
 	char nextchar = 'a';
 
 	while( nextchar != END_OF_STRING ) {

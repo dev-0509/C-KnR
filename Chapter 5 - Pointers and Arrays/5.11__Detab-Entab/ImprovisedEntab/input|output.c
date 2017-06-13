@@ -4,13 +4,13 @@
 
 //---------------------------------------------------------- INPUT ---------------------------------------------------------//
 
-char filename[] = "entab_input.txt";
-
 void fetchTabstopWidth(char const * argv[], int * tabstop_width) {
 
 	*tabstop_width = atoi( argv[ 1 ] );
 
 }
+
+char filename[] = "entab_input.txt";
 
 void readInputFromFile(char * string) {
 
