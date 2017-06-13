@@ -55,7 +55,7 @@ void readInputFromFile(char * string) {
 
 void displayOutputString(char * output_string) {
 
-	//system( "clear" );
+	system( "clear" );
 
 	printf("%s\n\n", output_string);
 
