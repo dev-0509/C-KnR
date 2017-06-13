@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "detab.h"
 
-    /*
+     /*
 	Please browse the 'detab_explanation' text file for a gist of this program!
 
 	Improvisation:	Accepts Tab Width as a terminal arguement and thereby operates
