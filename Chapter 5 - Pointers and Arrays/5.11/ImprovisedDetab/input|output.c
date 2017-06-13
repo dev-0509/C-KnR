@@ -1,10 +1,10 @@
 #include "stdio.h"
 #include "stdlib.h"
-#include "entab.h"
+#include "detab.h"
 
 //---------------------------------------------------------- INPUT ---------------------------------------------------------//
 
-char filename[] = "5.11__input.txt";
+char filename[] = "detab_input.txt";
 
 void fetchTabstopWidth(char const * argv[], int * tabstop_width) {
 
@@ -21,9 +21,31 @@ void readInputFromFile(char * string) {
 
 	if( fptr ) {
 
-		while( ( nextchar = fgetc( fptr ) ) != EOF ) 
+		while( ( nextchar = fgetc( fptr ) ) != EOF ) {
+
+			if( nextchar == '\\' ) {
+
+				nextchar = fgetc( fptr );
+
+				if( nextchar == 't' )
+
+					*string++ = '\t';
+
+				else {
+
+					*string++ = '\\';
+
+					*string++ = nextchar;
+
+				}
+
+				continue;
+
+			}
 
 			*string++ = nextchar;
+
+		}
 
 	} else
 

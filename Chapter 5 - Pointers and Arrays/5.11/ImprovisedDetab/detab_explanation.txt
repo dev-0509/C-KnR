@@ -1,0 +1,26 @@
+/----------------------------------------------------------- DETAB ----------------------------------------------------------\
+							 |^^^^^^^^^^^|
+
+=>	The Detab program, which envelopes the logic used in several editors, the logic of 
+	TAB WIDTHS and TAB STOPS.
+
+	A TabStop is a particular column in an editor to which the cursor jumps to directly,
+	whenever the TAB key is pressed.
+
+	The code in this particular directory deploys the number of SPACEs that are equivalent to a TAB, ie, the number of SPACEs that would be present in the string if there was a TAB key pressed.
+	The program does this by performing simple arithmetic over the number of tabs entered in the line of input.
+
+	Eg:	If the user input is - "hello\t hi  " and the TABSTOP width is '6',
+
+		Then, the input line becomes - "hello  hi"
+
+			After five characters in "hello", the sixth is a tab and is also the TABSTOP
+			where the cursor would jump upon pressing the TAB key.
+
+			Thus, the tab at position '6' signifies that a single space.
+
+		This is the process adopted in the Detab program.
+
+Happy Coding!:)
+
+/----------------------------------------------------------------------------------------------------------------------------\
