@@ -25,7 +25,7 @@ void displayOutputString( char * );
 // Converting Spaces to Tabs - Entab
 void entab( char * , char * , int );
 
-void placeTabIfTabstopReached( char * , int , int * , int * );
+void placeTabToSpaces( char * , int , int * , int * );
 
 void placeSpacesBeforeTabstop( char * , int * );
 
