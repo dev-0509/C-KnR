@@ -29,7 +29,7 @@ void displayOutputString( char * );
 // Converting Tabs to Spaces - Detab
 void detab( char * , char * , int );
 
-void placeSpacesToReachTabstop( char * , int , int * );
+void placeSpacesToTab( char * , int , int * );
 
 void resetCharCount( int * , int );
 

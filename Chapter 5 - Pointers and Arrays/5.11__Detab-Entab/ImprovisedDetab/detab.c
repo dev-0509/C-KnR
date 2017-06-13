@@ -14,7 +14,7 @@ void detab(char * string, char * output_string, int tabstop_width) {
 
 		if( nextchar == TAB )
 
-			placeSpacesToReachTabstop( output_string , tabstop_width , &charcount );
+			placeSpacesToTab( output_string , tabstop_width , &charcount );
 
 		else {
 
@@ -28,7 +28,7 @@ void detab(char * string, char * output_string, int tabstop_width) {
 
 }
 
-void placeSpacesToReachTabstop(char * output_string, int tabstop_width, int * charcount) {
+void placeSpacesToTab(char * output_string, int tabstop_width, int * charcount) {
 
 	int no_of_spaces;
 
