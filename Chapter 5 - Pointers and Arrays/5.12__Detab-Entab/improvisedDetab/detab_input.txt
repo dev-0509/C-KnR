@@ -1,1 +1,0 @@
-  this\t	is\t\t   a line  \t    of 	input !\t   
