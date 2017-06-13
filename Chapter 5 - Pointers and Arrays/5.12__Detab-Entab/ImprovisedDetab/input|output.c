@@ -5,11 +5,9 @@
 
 //---------------------------------------------------------- INPUT ---------------------------------------------------------//
 
-char filename[] = "detab_input.txt";
-
 void fetchTabSpecifications(char const * argv[], int * tabstop_width, int * start_column) {
 
-	if( ! ( strcmp( argv[ 1 ] , "-tabwidth" ) ) )
+	if( ! ( strcmp( argv[ 1 ] , "+tabwidth" ) ) )
 
 		*tabstop_width = atoi( argv[ 2 ] );
 
@@ -26,6 +24,8 @@ void fetchTabSpecifications(char const * argv[], int * tabstop_width, int * star
 		*start_column = 0;
 
 }
+
+char filename[] = "detab_input.txt";
 
 void readInputFromFile(char * string, int start_column) {
 

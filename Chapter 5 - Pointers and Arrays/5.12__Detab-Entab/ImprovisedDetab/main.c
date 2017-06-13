@@ -2,14 +2,15 @@
 #include "detab.h"
 
 /*
-	Please browse the 'detab_explanation' text file for a gist of this program!
+
+Please browse the 'detab_explanation' text file for a gist of this program!
 
 =>	Improvisation:	Accepts shorthand notations from the terminal denoting the Tab Width
 				and the column number after which Tabstops would activate.
 
-				Eg:	entab_executable.out -tabwidth <value> +column <value>
+			Eg:	entab_executable.out +tabwidth <value> -column <value>
 
-				Where, column: Column number after which Tabstops starts
+			Where, -column: Column number after which Tabstops starts
 
 */
 
