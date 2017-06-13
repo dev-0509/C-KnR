@@ -58,8 +58,6 @@ int placeTabIfFound(char ** string, char nextchar, FILE * fptr) {
 
 			*( *string )++ = nextchar;
 
-			return NOT_FOUND;
-
 		}
 
 	}
