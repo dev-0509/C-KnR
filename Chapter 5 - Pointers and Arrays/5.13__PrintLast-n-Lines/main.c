@@ -1,6 +1,5 @@
 #include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
+#include "readlines.h"
 
 /*
 
@@ -12,7 +11,7 @@
 	limits are reached.
 
 
-Happy Coding!
+Happy Coding:) !
 */
 
 int main(int argc, char const * argv[]) {

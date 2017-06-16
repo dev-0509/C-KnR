@@ -1,4 +1,4 @@
-/* ------------------------------ MACROS ------------------------------- */
+/* ---------------------------------------- MACROS ----------------------------------------- */
 
 #define SUCCESS	1
 #define READ		"r"
@@ -16,25 +16,25 @@
 
 #define LINE_EXISTS( newline , length )	( ( length = getLine( newline ) ) > 0 )
 
-/* --------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------- */
 
 
-/* --------------- FUNCTIONS HEADERS -------------------- */
+/* -------------- FUNCTIONS HEADERS ------------------- */
 
 // Input | Output
 int fetchNoOfLinesFromUser( int * , int );
 
-void printLastNLines( char * , int , int );
+void printLastNLines( char * [] , int , int );
 
 void printLineIndex( int );
 
 
 // Read Lines
-int populateBufferFromFile( char * , int * );
+int populateBufferFromFile( char * [] , int * );
 
 int getLine( char * );
 
-void storeLine( char * , int ** , char * , char * );
+void storeLine( char * [] , int ** , char * , char * );
 
 // Utility
 void openFile( FILE ** );
@@ -45,4 +45,4 @@ int checkOverflow( int );
 
 void checkMemoryStatus( int );
 
-/* ------------------------------------------------------- */
+/* ----------------------------------------------------- */

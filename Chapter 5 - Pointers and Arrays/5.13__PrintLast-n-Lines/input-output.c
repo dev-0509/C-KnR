@@ -1,9 +1,13 @@
 #include "stdio.h"
+#include "stdlib.h"
 #include "readlines.h"
+
 
 //---------------------------------------------------------- INPUT ---------------------------------------------------------//
 
 int fetchNoOfLinesFromUser(int * last_n_lines  , int no_of_lines) {
+
+	system( "clear" );
 
 	printf("\nMaximum Lines: %d\n\nNumber of Lines to be printed: ", no_of_lines);
 
@@ -11,7 +15,7 @@ int fetchNoOfLinesFromUser(int * last_n_lines  , int no_of_lines) {
 
 	if( *last_n_lines > no_of_lines ) {
 
-		printf("\nInvalid Input!\n");
+		printf("\nInvalid Input!\n\n");
 
 		return INVALID_INPUT;
 
@@ -32,9 +36,9 @@ void printLastNLines(char * lines[], int last_n_lines, int no_of_lines) {
 
 	int line_no;
 
-	line_no = ( no_of_lines - last_n_lines );
+	system( "clear" );
 
-	printf("\n");
+	line_no = ( no_of_lines - last_n_lines );
 
 	while( line_no < no_of_lines ) {
 

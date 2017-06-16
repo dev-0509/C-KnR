@@ -1,4 +1,5 @@
 #include "stdio.h"
+#include "string.h"
 #include "readlines.h"
 
 int populateBufferFromFile(char * lines[], int * line_no) {
@@ -50,7 +51,7 @@ int getLine(char * line) {
 
 	}
 
-	line[index] = '\0';
+	line[ index ] = '\0';
 
 	file_ptr_position = ftell( fptr );
 
