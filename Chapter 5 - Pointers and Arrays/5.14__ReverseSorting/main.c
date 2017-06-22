@@ -4,12 +4,21 @@
 
 /*
 
-=>	Program to display the last 'n' lines from an input source, value of 'n', 
-	dynamically handled by the user.
+=>	Program to Sort Strings read from a file, providing all types of sortings.
 
-	The code makes efficient use memory by utilising only the required number of Bytes
-	to store the string in the system memory and not storing any lines if the memory
-	limits are reached.
+	~ Lexicographical Sorting
+	~ Reverse Sorting
+	~ Numeric Sorting
+
+	A terminal handle controls which type of Sorting is prompted,
+
+		-r : Enables Reverse Sorting
+		-n : Enables Numeric Sorting
+
+		No handle by default prompts Lexicographical Sorting.
+
+	Concept :	At run-time, a pointer to function decides which particular
+			function to be called, based on the handle provided by the user.
 
 
 Happy Coding:) !
@@ -25,7 +34,7 @@ int main(int argc, char const * argv[]) {
 
 	checkMemoryStatus( memory_status );
 
-	type = checkTypeOfSorting( argc , argv );
+	checkTypeOfSorting( argc , argv , &type );
 
 	sortHandler( type , lines , no_of_lines );
 

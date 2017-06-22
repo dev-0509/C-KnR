@@ -10,7 +10,7 @@
 
 /* --------------------------- FUNCTIONS HEADERS ------------------------------ */
 
-int checkTypeOfSorting( int , const char * [] );
+void checkTypeOfSorting( int , const char * [] , int * );
 
 int type( int , int );
 

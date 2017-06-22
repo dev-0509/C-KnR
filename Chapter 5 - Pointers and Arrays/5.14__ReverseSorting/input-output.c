@@ -33,19 +33,19 @@ void printTypeOfSorting(int sorting_type) {
 
 		case LEXICO_SORT :	printf("\n\tLEXICOGRAPHICAL SORT => ( ASCII Based )\n\n");
 
-				break;
+					break;
 
 		case REVERSE_SORT :	printf("\n\tREVERSE SORT => ( ASCII Based )\n\n");
 
-				break;
+					break;
 
 		case NUMERIC_SORT :	printf("\n\tNUMERIC SORT =>\n\n");
 
-				break;
+					break;
 
 		case REVERSE_NUMERIC_SORT :	printf("\n\tREVERSE NUMERIC SORT =>\n\n");
 
-				break;
+					break;
 
 	}
 

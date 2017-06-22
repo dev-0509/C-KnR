@@ -4,39 +4,47 @@
 #include "readlines.h"
 #include "sorthandler.h"
 
-int checkTypeOfSorting(int argc, char const * argv[]) {
+void checkTypeOfSorting(int argc, char const * argv[], int * sorting_type) {
 
 	int reverse_sort = FALSE, numeric_sort = FALSE;
 
 	switch( argc ) {
 
-		case 1 :	return LEXICO_SORT;
+		case 1 :	*sorting_type = LEXICO_SORT;
+
+			break;
 
 		case 2 :	if( ! ( strcmp( argv[ 1 ] , "-r" ) ) )
 
-				return REVERSE_SORT;
+					*sorting_type = REVERSE_SORT;
 
-			if( ! (strcmp( argv[ 1 ] , "-n" ) ) )
+				else if( ! (strcmp( argv[ 1 ] , "-n" ) ) )
 
-				return NUMERIC_SORT;
+					*sorting_type = NUMERIC_SORT;
 
-			return LEXICO_SORT;
+				else
+
+					*sorting_type = LEXICO_SORT;
+
+				break;
 
 		case 3 :	if( ! (strcmp( argv[ 1 ] , "-r" ) ) || 
 
-			! (strcmp( argv[ 2 ] , "-r" ) ) )
+				! (strcmp( argv[ 2 ] , "-r" ) ) )
 
-				reverse_sort = TRUE;
+					reverse_sort = TRUE;
 
-					if( ! (strcmp( argv[ 1 ] , "-n" ) ) || 
+					else if( ! (strcmp( argv[ 1 ] , "-n" ) ) || 
 
-			! (strcmp( argv[ 2 ] , "-n" ) ) )
+				! (strcmp( argv[ 2 ] , "-n" ) ) )
 
-				numeric_sort = TRUE;
+					numeric_sort = TRUE;
 
-			return ( type( reverse_sort , numeric_sort ) );
+				*sorting_type = ( type( reverse_sort , numeric_sort ) );
 
-		default :	return LEXICO_SORT;
+				break;
+
+		default :	*sorting_type = LEXICO_SORT;
 
 	}
 
@@ -106,19 +114,19 @@ void setTypeOfSorting(int sorting_type, void ( ** func_ptr )(char * [], int *, i
 
 		case LEXICO_SORT :	*func_ptr = lexicographicSort;
 
-				break;
+					break;
 
 		case REVERSE_SORT :	*func_ptr = reverseSort;
 
-				break;
+					break;
 
 		case NUMERIC_SORT :	*func_ptr = numericSort;
 
-				break;
+					break;
 
 		case REVERSE_NUMERIC_SORT :	*func_ptr = reverseNumericSort;
 
-				break;
+					break;
 
 	}
 
