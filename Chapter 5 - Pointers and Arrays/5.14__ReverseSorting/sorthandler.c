@@ -34,7 +34,7 @@ void checkTypeOfSorting(int argc, char const * argv[], int * sorting_type) {
 
 					reverse_sort = TRUE;
 
-				else if( ! (strcmp( argv[ 1 ] , "-n" ) ) || 
+				if( ! (strcmp( argv[ 1 ] , "-n" ) ) || 
 
 				! (strcmp( argv[ 2 ] , "-n" ) ) )
 
