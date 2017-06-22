@@ -1,16 +1,16 @@
 /* ---------------------------------------- MACROS ----------------------------------------- */
 
 #define 	SUCCESS			1
-#define 	READ				"r"
-#define 	NEWLINE 			'\n'
-#define 	OVERFLOW			-1
-#define 	STORAGE_AVAILABLE		0
-#define 	STORAGE_NOT_AVAILABLE		-1
-#define 	TRUE		1
-#define 	FALSE		0
+#define 	READ			"r"
+#define 	NEWLINE 		'\n'
+#define 	OVERFLOW		-1
+#define 	STORAGE_AVAILABLE	0
+#define 	STORAGE_NOT_AVAILABLE	-1
+#define 	TRUE			1
+#define 	FALSE			0
 
-#define MAXLINES	100
-#define MAXLENGTH	100
+#define 	MAXLINES		100
+#define 	MAXLENGTH		100
 
 #define NEW_CHARACTER_EXISTS( character , fptr ) ( character = fgetc( fptr ) ) != NEWLINE
 

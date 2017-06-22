@@ -1,8 +1,8 @@
 /* ------------ MACROS ------------- */
 
-#define LEXICO_SORT	'l'
-#define REVERSE_SORT	'r'
-#define NUMERIC_SORT	'n'
+#define LEXICO_SORT		'l'
+#define REVERSE_SORT		'r'
+#define NUMERIC_SORT		'n'
 #define REVERSE_NUMERIC_SORT	1
 
 /*---------------------------------- */
