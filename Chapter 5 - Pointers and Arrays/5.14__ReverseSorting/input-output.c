@@ -43,7 +43,7 @@ void printTypeOfSorting(int sorting_type) {
 
 					break;
 
-		case REVERSE_NUMERIC_SORT :	printf("\n\tREVERSE NUMERIC SORT =>\n\n");
+	case REVERSE_NUMERIC_SORT :	printf("\n\tREVERSE NUMERIC SORT =>\n\n");
 
 					break;
 

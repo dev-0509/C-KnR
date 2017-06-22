@@ -12,7 +12,7 @@ void checkTypeOfSorting(int argc, char const * argv[], int * sorting_type) {
 
 		case 1 :	*sorting_type = LEXICO_SORT;
 
-			break;
+				break;
 
 		case 2 :	if( ! ( strcmp( argv[ 1 ] , "-r" ) ) )
 
@@ -34,7 +34,7 @@ void checkTypeOfSorting(int argc, char const * argv[], int * sorting_type) {
 
 					reverse_sort = TRUE;
 
-					else if( ! (strcmp( argv[ 1 ] , "-n" ) ) || 
+				else if( ! (strcmp( argv[ 1 ] , "-n" ) ) || 
 
 				! (strcmp( argv[ 2 ] , "-n" ) ) )
 
@@ -124,7 +124,7 @@ void setTypeOfSorting(int sorting_type, void ( ** func_ptr )(char * [], int *, i
 
 					break;
 
-		case REVERSE_NUMERIC_SORT :	*func_ptr = reverseNumericSort;
+	case REVERSE_NUMERIC_SORT :	*func_ptr = reverseNumericSort;
 
 					break;
 
