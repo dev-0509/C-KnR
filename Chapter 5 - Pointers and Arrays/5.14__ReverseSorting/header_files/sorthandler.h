@@ -28,7 +28,7 @@ void numericSort( char * [] , int * , int , int );
 
 void reverseNumericSort( char * [] , int * , int , int );
 
-int numberCompare( char * , char * );
+int numberCompare( char * , char * , int * );
 
 void swap( char * [] , int , int );
 

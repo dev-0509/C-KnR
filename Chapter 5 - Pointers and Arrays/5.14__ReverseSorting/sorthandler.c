@@ -149,22 +149,42 @@ void reverseSort(char * lines[], int * last, int left, int index) {
 }
 
 void numericSort(char * lines[], int * last, int left, int index) {
+
+	int is_numerical = TRUE;
 	
-	if( numberCompare( lines[ index ] , lines[ left ] ) < 0 )
+	if( numberCompare( lines[ index ] , lines[ left ] , &is_numerical ) == -1 )
 
 		swap( lines , ++( *last ) , index );
+
+	if( is_numerical == FALSE ) {
+
+		if( strcmp( lines[ index ] , lines[ left ] ) < 0 )
+
+			swap( lines , ++( *last ) , index );
+
+	}
 
 }
 
 void reverseNumericSort(char * lines[], int * last, int left, int index) {
-	
-	if( numberCompare( lines[ index ] , lines[ left ] ) > 0 )
+
+	int is_numerical = TRUE;
+
+	if( numberCompare( lines[ index ] , lines[ left ] , &is_numerical ) == 1 )
 
 		swap( lines , ++( *last ) , index );
 
+	if( is_numerical == FALSE ) {
+
+		if( strcmp( lines[ index ] , lines[ left ] ) > 0 )
+
+			swap( lines , ++( *last ) , index );
+
+	}
+
 }
 
-int numberCompare(char * line1, char * line2) {
+int numberCompare(char * line1, char * line2, int * is_numerical) {
 
 	int value1, value2;
 
@@ -177,6 +197,10 @@ int numberCompare(char * line1, char * line2) {
 	if( value1 > value2 )
 
 		return 1;
+
+	if( value1 == 0 && value2 == 0 )
+
+		*is_numerical = FALSE;
 
 	return 0;
 
