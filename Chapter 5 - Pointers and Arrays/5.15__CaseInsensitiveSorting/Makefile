@@ -4,7 +4,7 @@ CC = gcc
 
 # ------------------------- #
 
-# -- Handle to Enable Compilation & A	void Linking -- #
+# -- Handle to Enable Compilation & Avoid Linking -- #
 
 COMPILE = -c
 
