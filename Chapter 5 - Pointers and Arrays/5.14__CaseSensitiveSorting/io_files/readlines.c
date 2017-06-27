@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "string.h"
-#include "readlines.h"
+#include "../header_files/readlines.h"
 
 int populateBufferFromFile(char * lines[], int * line_no) {
 

@@ -1,6 +1,6 @@
 #include "stdio.h"
-#include "readlines.h"
-#include "sorthandler.h"
+#include "header_files/readlines.h"
+#include "header_files/sorthandler.h"
 
 /*
 

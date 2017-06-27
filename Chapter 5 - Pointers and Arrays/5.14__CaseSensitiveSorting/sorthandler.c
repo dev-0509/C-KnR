@@ -1,8 +1,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
-#include "readlines.h"
-#include "sorthandler.h"
+#include "header_files/readlines.h"
+#include "header_files/sorthandler.h"
 
 void checkTypeOfSorting(int argc, char const * argv[], int * sorting_type) {
 

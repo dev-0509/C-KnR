@@ -1,12 +1,12 @@
 #include "stdio.h"
 #include "string.h"
 #include "stdlib.h"
-#include "readlines.h"
-#include "sorthandler.h"
+#include "header_files/readlines.h"
+#include "header_files/sorthandler.h"
 
 void openFile(FILE ** fptr) {
 
-	char filename[] = "input_file.txt";
+	char filename[] = "io_files/input_file.txt";
 
 	*fptr = fopen( filename , READ );
 
