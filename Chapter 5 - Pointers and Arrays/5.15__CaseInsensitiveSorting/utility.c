@@ -6,7 +6,7 @@
 
 void openFile(FILE ** fptr) {
 
-	char filename[] = "input_file.txt";
+	char filename[] = "io_files/input_file.txt";
 
 	*fptr = fopen( filename , READ );
 
