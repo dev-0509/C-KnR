@@ -18,7 +18,7 @@ OUTPUT_FILE = -o
 
 
 
-# -------------------------------- Compilation + Linking -------------------------------------------------- #
+# ------------------------------------ Compilation + Linking ---------------------------------------------- #
 
 output: main.o sorthandler.o sortingmethods.o utility.o input-output.o readlines.o
 
