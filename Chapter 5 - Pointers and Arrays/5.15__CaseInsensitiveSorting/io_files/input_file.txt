@@ -1,0 +1,5 @@
+normal string
+50 this is a numerical string
+Upper CASE string
+lower case string
+10 another numerical string
