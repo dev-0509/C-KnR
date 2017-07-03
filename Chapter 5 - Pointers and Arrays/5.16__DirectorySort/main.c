@@ -31,15 +31,15 @@ int main(int argc, char const * argv[]) {
 
 	char * lines[ MAXLINES ];
 
-	int no_of_lines = 0, last_n_lines, memory_status, type;
+	int no_of_lines = 0, last_n_lines, memory_status, type, directorysort_flag;
 
 	memory_status = populateBufferFromFile( lines , &no_of_lines );
 
 	checkMemoryStatus( memory_status );
 
-	checkTypeOfSorting( argc , argv , &type );
+	directorysort_flag = checkTypeOfSorting( argc , argv , &type );
 
-	sortHandler( type , lines , no_of_lines );
+	sortHandler( type , lines , no_of_lines , directorysort_flag );
 
 	printSortedLines( lines , no_of_lines , type );
 

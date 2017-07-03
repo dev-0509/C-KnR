@@ -9,7 +9,7 @@ void printSortedLines(char * lines[], int no_of_lines, int sorting_type) {
 
 	int line_no = 0;
 
-	system( "clear" );
+	//system( "clear" );
 
 	printTypeOfSorting( sorting_type );
 

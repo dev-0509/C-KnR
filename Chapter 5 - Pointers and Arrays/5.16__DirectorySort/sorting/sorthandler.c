@@ -5,85 +5,21 @@
 #include "../header_files/readlines.h"
 #include "../header_files/sorthandler.h"
 
-void checkTypeOfSorting(int argc, char const * argv[], int * sorting_type) {
-
-	int reverse_sort = FALSE, numeric_sort = FALSE;
-
-	switch( argc ) {
-
-		case 1 :	*sorting_type = LEXICO_SORT;
-
-				break;
-
-		case 2 :	if( ! ( strcmp( argv[ 1 ] , "-r" ) ) )
-
-					*sorting_type = REVERSE_SORT;
-
-				else if( ! (strcmp( argv[ 1 ] , "-n" ) ) )
-
-					*sorting_type = NUMERIC_SORT;
-
-				else
-
-					*sorting_type = LEXICO_SORT;
-
-				break;
-
-		case 3 :	if( ! (strcmp( argv[ 1 ] , "-r" ) ) || 
-
-				! (strcmp( argv[ 2 ] , "-r" ) ) )
-
-					reverse_sort = TRUE;
-
-				if( ! (strcmp( argv[ 1 ] , "-n" ) ) || 
-
-				! (strcmp( argv[ 2 ] , "-n" ) ) )
-
-					numeric_sort = TRUE;
-
-				*sorting_type = ( type( reverse_sort , numeric_sort ) );
-
-				break;
-
-		default :	*sorting_type = LEXICO_SORT;
-
-	}
-
-}
-
-int type(int reverse_sort, int numeric_sort) {
-
-	if( reverse_sort == TRUE && numeric_sort == TRUE )
-
-		return REVERSE_NUMERIC_SORT;
-
-	if( reverse_sort == TRUE )
-
-		return REVERSE_SORT;
-
-	if( numeric_sort == TRUE )
-
-		return NUMERIC_SORT;
-
-	return LEXICO_SORT;
-
-}
-
-void sortHandler(int sorting_type, char * lines[], int no_of_lines) {
+void sortHandler(int sorting_type, char * lines[], int no_of_lines, int directorysort_flag) {
 
 	int left, right;
 
 	left = 0;	right = ( no_of_lines - 1 );
 
-	quickSort( lines , left , right , sorting_type );
+	quickSort( lines , left , right , sorting_type , directorysort_flag );
 
 }
 
-void quickSort(char * lines[], int left, int right, int sorting_type) {
+void quickSort(char * lines[], int left, int right, int sorting_type, int directorysort_flag) {
 
 	int index, mid, last;
 
-	void ( * func_ptr )( char * [] , int * , int , int );
+	void ( * func_ptr )( char * [] , int * , int , int , int );
 
 	setTypeOfSorting( sorting_type , &func_ptr );
 
@@ -99,17 +35,17 @@ void quickSort(char * lines[], int left, int right, int sorting_type) {
 
 	for( index = ( left + 1 ) ; index <= right ; ++index )
 
-		( *func_ptr )( lines , &last , left , index );
+		( *func_ptr )( lines , &last , left , index , directorysort_flag );
 
 	swap( lines , left , last );
 
-	quickSort( lines , left , ( last - 1 ) , sorting_type );
+	quickSort( lines , left , ( last - 1 ) , sorting_type , directorysort_flag );
 
-	quickSort( lines , ( last + 1 ) , right , sorting_type );
+	quickSort( lines , ( last + 1 ) , right , sorting_type , directorysort_flag );
 
 }
 
-void setTypeOfSorting(int sorting_type, void ( ** func_ptr )(char * [], int *, int, int)) {
+void setTypeOfSorting(int sorting_type, void ( ** func_ptr )(char * [], int *, int, int , int )) {
 
 	switch( sorting_type ) {
 
@@ -133,23 +69,23 @@ void setTypeOfSorting(int sorting_type, void ( ** func_ptr )(char * [], int *, i
 
 }
 
-void lexicographicSort(char * lines[], int * last, int left, int index) {
+void lexicographicSort(char * lines[], int * last, int left, int index, int directorysort_flag) {
 
-	if( str_cmp( lines[ index ] , lines[ left ] ) < 0 )
+	if( str_cmp( lines[ index ] , lines[ left ] , directorysort_flag ) < 0 )
 
 		swap( lines , ++( *last ) , index );	
 
 }
 
-void reverseSort(char * lines[], int * last, int left, int index) {
+void reverseSort(char * lines[], int * last, int left, int index, int directorysort_flag) {
 
-	if( str_cmp( lines[ index ] , lines[ left ] ) > 0 )
+	if( str_cmp( lines[ index ] , lines[ left ] , directorysort_flag ) > 0 )
 
 		swap( lines , ++( *last ) , index );
 
 }
 
-void numericSort(char * lines[], int * last, int left, int index) {
+void numericSort(char * lines[], int * last, int left, int index, int directorysort_flag) {
 
 	int is_numerical = TRUE;
 	
@@ -159,7 +95,7 @@ void numericSort(char * lines[], int * last, int left, int index) {
 
 	if( is_numerical == FALSE ) {
 
-		if( str_cmp( lines[ index ] , lines[ left ] ) < 0 )
+		if( str_cmp( lines[ index ] , lines[ left ] , directorysort_flag ) < 0 )
 
 			swap( lines , ++( *last ) , index );
 
@@ -167,7 +103,7 @@ void numericSort(char * lines[], int * last, int left, int index) {
 
 }
 
-void reverseNumericSort(char * lines[], int * last, int left, int index) {
+void reverseNumericSort(char * lines[], int * last, int left, int index, int directorysort_flag) {
 
 	int is_numerical = TRUE;
 
@@ -177,7 +113,7 @@ void reverseNumericSort(char * lines[], int * last, int left, int index) {
 
 	if( is_numerical == FALSE ) {
 
-		if( str_cmp( lines[ index ] , lines[ left ] ) > 0 )
+		if( str_cmp( lines[ index ] , lines[ left ] , directorysort_flag ) > 0 )
 
 			swap( lines , ++( *last ) , index );
 

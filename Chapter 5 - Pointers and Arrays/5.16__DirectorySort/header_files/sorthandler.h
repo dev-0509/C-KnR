@@ -10,28 +10,30 @@
 
 /* --------------------------- FUNCTION HEADERS ------------------------------ */
 
-void checkTypeOfSorting( int , const char * [] , int * );
+int checkTypeOfSorting( int , char const * [] , int * );
+
+void checkForDirectorySort( int , char const * [] , int * );
 
 int type( int , int );
 
-void sortHandler( int , char * [] , int );
+void sortHandler( int , char * [] , int , int );
 
-void quickSort( char * [] , int , int , int );
+void quickSort( char * [] , int , int , int ,int );
 
-void setTypeOfSorting( int , void ( ** )( char * [] , int * , int , int ) );
+void setTypeOfSorting( int , void ( ** )( char * [] , int * , int , int , int ) );
 
-void lexicographicSort( char * [] , int * , int , int );
+void lexicographicSort( char * [] , int * , int , int , int );
 
-void reverseSort( char * [] , int * , int , int );
+void reverseSort( char * [] , int * , int , int , int );
 
-void numericSort( char * [] , int * , int , int );
+void numericSort( char * [] , int * , int , int , int );
 
-void reverseNumericSort( char * [] , int * , int , int );
+void reverseNumericSort( char * [] , int * , int , int , int );
 
 int numberCompare( char * , char * , int * );
 
 void swap( char * [] , int , int );
 
-int str_cmp( char * , char * );
+int str_cmp( char * , char * , int );
 
 /* ---------------------------------------------------------------------------- */

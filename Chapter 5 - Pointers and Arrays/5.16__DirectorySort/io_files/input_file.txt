@@ -1,5 +1,5 @@
-normal string
-50 this is a numerical string
-Upper CASE string
-lower case string
-10 another numerical string
+--dev
+10-sa!ni
+@-hijit
+54^^shubh@m
+3iyer

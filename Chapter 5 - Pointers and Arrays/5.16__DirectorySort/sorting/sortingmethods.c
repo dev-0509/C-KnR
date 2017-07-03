@@ -3,7 +3,7 @@
 #include "../header_files/readlines.h"
 #include "../header_files/sortingmethods.h"
 
-int str_cmp(char * comparator_string, char * comparable_string) {
+int str_cmp(char * comparator_string, char * comparable_string, int directorysort_flag) {
 
 	int index = 0;
 
@@ -14,7 +14,7 @@ int str_cmp(char * comparator_string, char * comparable_string) {
 
 	convertComparableStringToLowerCase( comparable_string , lowercase_comparable );
 
-	return ( compareStrings( lowercase_comparator , lowercase_comparable ) ) ;
+	return ( compareStrings( lowercase_comparator , lowercase_comparable , directorysort_flag ) ) ;
 
 }
 
@@ -62,27 +62,51 @@ void convertComparableStringToLowerCase(char * comparable_string , char * lowerc
 
 }
 
-int compareStrings(char * comparator_string, char * comparable_string) {
+int compareStrings(char * comparator_string, char * comparable_string, int directorysort_flag) {
 
-	int index = 0;
+	int i = 0, j = 0, status;
 
-	while( *(comparator_string + index) != '\0' ) {
+	while( *( comparator_string + i ) != '\0' ) {
 
-		if( *( comparable_string + index ) == '\0' )
+		if( isalpha( *( comparator_string + i ) ) || isdigit( *( comparator_string + i ) ) ) {
 
-			return 1;
+			if( isalpha( *( comparable_string + j ) ) || isdigit( *( comparable_string + j ) ) ) {
 
-		if( *( comparator_string + index ) < *( comparable_string + index ) )
+				status = compare( *( comparator_string + i ) , *( comparable_string + j ) );
 
-			return -1;
+				( ++i ) ;	( ++j ) ;
 
-		if( *( comparator_string + index ) > *( comparable_string + index ) )
+			} else
 
-			return 1;
+				++j;
 
-		++index;
+		} else 
+
+			++i;
+
+		if( status != 0 )
+
+			return status;			
 
 	}
+
+	return status;
+
+}
+
+int compare(char main_char, char cmp_char) {
+
+	if( cmp_char == '\0' )
+
+		return 1;
+
+	if( main_char < cmp_char )
+
+		return -1;
+
+	if( main_char > cmp_char )
+
+		return 1;
 
 	return 0;
 
