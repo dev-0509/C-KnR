@@ -20,8 +20,9 @@
 	Concept :	At run-time, a pointer to function decides which particular
 			function to be called, based on the handle provided by the user.
 
-	Improvisation: Sorts strings irrespective of the case in which is the string
-			is read, either Upper Case or Lower Case.
+	Improvisation: Sorts strings according to the Directory convention, it only runs the
+		algorithm on alphabets and numbers, and ignores all types of special characters
+		that might appear in the test data of strings.	
 
 
 Happy Coding:) !
