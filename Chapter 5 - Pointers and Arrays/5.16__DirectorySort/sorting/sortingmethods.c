@@ -84,7 +84,9 @@ int directorySort(char * comparator_string, char * comparable_string) {
 
 	while( *( comparator_string + index_1 ) != '\0' ) {
 
-		status = compareAndSort( *( comparator_string + index_1 ) , *( comparable_string + index_2 ) , &index_1 , &index_2 );
+		status = compareAndSort( *( comparator_string + index_1 ) , *( comparable_string + index_2 ) , 
+
+					&index_1 , &index_2 );
 
 		if( ( status != WILD_CHAR_FOUND ) && ( status != 0 ) )
 
