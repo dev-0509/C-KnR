@@ -5,13 +5,13 @@
 
 //---------------------------------------------------------- OUTPUT ---------------------------------------------------------//
 
-void printSortedLines(char * lines[], int no_of_lines, int sorting_type) {
+void printSortedLines(char * lines[], int no_of_lines, int sorting_type, int directorysort_flag) {
 
 	int line_no = 0;
 
 	system( "clear" );
 
-	printTypeOfSorting( sorting_type );
+	printTypeOfSorting( sorting_type , directorysort_flag );
 
 	while( line_no < no_of_lines ) {
 
@@ -27,7 +27,11 @@ void printSortedLines(char * lines[], int no_of_lines, int sorting_type) {
 
 }
 
-void printTypeOfSorting(int sorting_type) {
+void printTypeOfSorting(int sorting_type, int directorysort_flag) {
+
+	if( directorysort_flag == TRUE )
+
+		printf("\n\t\t\tDIRECTORY SORT\n");	
 
 	switch( sorting_type ) {
 

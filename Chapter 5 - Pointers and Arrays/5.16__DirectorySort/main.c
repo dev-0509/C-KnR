@@ -42,7 +42,7 @@ int main(int argc, char const * argv[]) {
 
 	sortHandler( type , lines , no_of_lines , directorysort_flag );
 
-	printSortedLines( lines , no_of_lines , type );
+	printSortedLines( lines , no_of_lines , type , directorysort_flag );
 
 	return 0;
 

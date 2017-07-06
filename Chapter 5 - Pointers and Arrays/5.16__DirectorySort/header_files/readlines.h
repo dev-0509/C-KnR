@@ -22,9 +22,9 @@
 /* -------------- FUNCTIONS HEADERS ------------------- */
 
 // Input | Output
-void printSortedLines( char * [] , int , int );
+void printSortedLines( char * [] , int , int , int );
 
-void printTypeOfSorting( int );
+void printTypeOfSorting( int , int );
 
 void printLineIndex( int );
 

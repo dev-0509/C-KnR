@@ -20,9 +20,9 @@ OUTPUT_FILE = -o
 
 # ------------------------------------ Compilation + Linking ---------------------------------------------- #
 
-output: main.o sorthandler.o sortingmethods.o utility.o input-output.o readlines.o
+output: main.o sorthandler.o sortingmethods.o sortingtypes.o utility.o input-output.o readlines.o
 
-	$(CC) $(OUTPUT_FILE) output main.o sorthandler.o sortingmethods.o utility.o input-output.o readlines.o
+	$(CC) $(OUTPUT_FILE) output main.o sorthandler.o sortingmethods.o sortingtypes.o utility.o input-output.o readlines.o
 
 
 main.o: main.c
@@ -38,6 +38,11 @@ sorthandler.o: sorting/sorthandler.c
 sortingmethods.o: sorting/sortingmethods.c
 
 	$(CC) $(COMPILE) sorting/sortingmethods.c
+
+
+sortingtypes.o: sorting/sortingtypes.c
+
+	$(CC) $(COMPILE) sorting/sortingtypes.c
 
 
 utility.o: utility.c
