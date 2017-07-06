@@ -84,17 +84,11 @@ int directorySort(char * comparator_string, char * comparable_string) {
 
 	while( *( comparator_string + index_1 ) != '\0' ) {
 
-		if( noWildCharFound( *( comparator_string + index_1 ) , *( comparable_string + index_2 ) , &index_1 , &index_2 ) ) {
+		status = compareAndSort( *( comparator_string + index_1 ) , *( comparable_string + index_2 ) , &index_1 , &index_2 );
 
-			status = compare( *( comparator_string + index_1 ) , *( comparable_string + index_2 ) );
+		if( ( status != WILD_CHAR_FOUND ) && ( status != 0 ) )
 
-			( ++index_1 ) ;	( ++index_2 ) ;
-
-			if( status != 0 )
-
-				return status;			
-
-		}
+			return status;		
 
 	}
 
@@ -102,7 +96,21 @@ int directorySort(char * comparator_string, char * comparable_string) {
 
 }
 
-int noWildCharFound(char main_char, char cmp_char, int * index_1, int * index_2) {
+int compareAndSort(char main_char, char cmp_char, int * index_1, int * index_2) {
+
+	if( noWildCharFound( main_char , cmp_char , &index_1 , &index_2 ) ) {
+
+		++( *index_1 ) ;	++( *index_2 ) ;
+
+		return ( compare( main_char , cmp_char ) ) ;
+
+	}
+
+	return WILD_CHAR_FOUND;
+
+}
+
+int noWildCharFound(char main_char, char cmp_char, int ** index_1, int ** index_2) {
 
 	if( isalpha( main_char ) || isdigit( main_char ) ) {
 
@@ -112,11 +120,11 @@ int noWildCharFound(char main_char, char cmp_char, int * index_1, int * index_2)
 
 		else
 
-			++(*index_2);
+			++( **index_2 );
 
 	} else
 
-		++(*index_1);
+		++( **index_1 );
 
 	return FOUND;
 

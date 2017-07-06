@@ -3,6 +3,8 @@
 #define FOUND	0
 #define NOT_FOUND	1
 
+#define WILD_CHAR_FOUND	'!'
+
 /* -------------------- */
 
 /* --------------------------- FUNCTION HEADERS ------------------------------ */
@@ -19,6 +21,8 @@ int directorySort( char * , char * );
 
 int normalSort( char * , char * );
 
-int noWildCharFound( char , char , int * , int * );
+int compareAndSort( char , char , int * , int * );
+
+int noWildCharFound( char , char , int ** , int ** );
 
 /* ---------------------------------------------------------------------------- */
