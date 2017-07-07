@@ -28,8 +28,8 @@
 			Eg: "dev 20 delhi"
 
 				The above string has three fields: 1. Name
-								2. Age
-								3. Residence
+								   2. Age
+								   3. Residence
 
 			User can select the field number to be sorted and all the strings in that
 			particular field would undergo sorting.
